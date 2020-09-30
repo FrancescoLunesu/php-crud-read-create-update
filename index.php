@@ -7,9 +7,16 @@ include __DIR__ . "/partials/home/server.php";
 // var_dump($results);
 // die();
  ?>
-<body>
+
 
     <div class="container">
+        <?php if(!empty($_GET["roomId"])){
+            $stanza_cancellata = $_GET["roomId"];
+        ?>
+            <div class="alert alert-warning">
+                <?php echo "Hai cancellato la stanza numero: $stanza_cancellata"; ?>
+            </div>
+        <?php } ?>
         <table class="table">
             <thead>
                 <tr>
@@ -29,7 +36,7 @@ include __DIR__ . "/partials/home/server.php";
                     <td><?php echo $room["room_number"]; ?></td>
                     <td><?php echo $room["floor"]; ?></td>
                     <td><a href="show.php?id=<?php echo $room["id"]; ?>">VIEW</a></td>
-                    <td><a href="#">UPDATE</a></td>
+                    <td><a href="update.php?id=<?php echo $room["id"]; ?>">UPDATE</a></td>
                     <td>
                         <form class="" action="partials/delete/server.php" method="post">
                             <input type="submit" name="" value="DELETE" class="btn btn-danger">
@@ -44,5 +51,6 @@ include __DIR__ . "/partials/home/server.php";
 
     </div>
 
-</body>
-</html>
+<?php
+include __DIR__ . "/partials/templates/footer.php";
+ ?>
