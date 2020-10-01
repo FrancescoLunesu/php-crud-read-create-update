@@ -1,8 +1,8 @@
 <?php
 // collego il file head.php che continere il tag DOCTYPE e HEAD
-include __DIR__ . "/partials/templates/head.php";
+include __DIR__ . '/partials/templates/head.php';
 // includo il server.php che contiene la query per estrarre i dati dal db
-include __DIR__ . "/partials/home/server.php";
+include __DIR__ . '/partials/home/server.php';
 // faccio un controllo con var_dump per vedere se è stato incluso correttamente
 // var_dump($results);
 // die();
